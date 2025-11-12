@@ -15,12 +15,12 @@
     <div class="operation-card">
       <form id="operation-form" class="operation-card-form">
         <label class="operation-card-field">
-          <span class="sr-only">Bill</span> <br>
-          <img alt="doller" src="./images/icon-dollar.svg">
+          <span>Bill</span> <br>
+          <img class="icon-img" alt="doller" src="./images/icon-dollar.svg">
           <input type="number" id="bill" name="bill" inputmode="decimal" min="0" step="0.01" placeholder="0" required>
         </label>
-        <fieldset>
-          <legend>Select Tip %</legend>
+        <fieldset class="operation-card-tip-panels">
+          <legend>Select Tip</legend>
           <input type="radio" id="operation-card-tip-5" name="tip" value="5">
           <label for="operation-card-tip-5">5%</label>
           <input type="radio" id="operation-card-tip-10" name="tip" value="10">
@@ -35,11 +35,28 @@
           <label for="operation-card-custom-tip" class="sr-only">Custom tip</label>
           <input type="number" id="operation-card-custom-tip" name="custom-tip" inputmode="numeric" min="0" step="1" placeholder="Custom">
         </fieldset>
+
+        <label class="operation-card-field">
+          <span>Number of People</span> <br>
+          <img class="icon-img" alt="doller" src="./images/icon-person.svg">
+          <input type="number" id="number-of-people" name="number-of-people" inputmode="numeric" min="0" step="1" placeholder="0" required>
+        </label>
       </form>
     </div>
     <div class="result-card">
-      <div class="res-display">res-display</div>
-      <div class="reset-button">reset</div>
+      <div class="res-display">
+        <div>
+          Tip Amount<br>
+          /person
+        </div>
+        <div><h1>$0.00</h1></div>
+        <div>
+          Total<br>
+          /person
+        </div>
+        <div><h1>$0.00</h1></div>
+      </div>
+      <button id="reset" name="reset" class="reset-button">RESET</button>
     </div>
   </main>
 
