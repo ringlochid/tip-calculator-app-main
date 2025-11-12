@@ -117,10 +117,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 .operation-card-tip-panels {
   position: relative;
   display: grid;
@@ -133,9 +129,23 @@ input[type="number"] {
 
 .operation-card-tip-panels legend {
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.9rem;
+  gap: 0.5rem;
   margin-bottom: 0.25rem;
   color: var(--clr-neutral-grey-500);
+}
+
+.operation-card-tip-panels.has-error {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: 2px solid var(--clr-accent-orange);
+}
+
+.operation-card-tip-panels.has-error legend {
+  margin-bottom: 0.75rem;
 }
 
 .operation-card-tip-panels input[type="radio"] {
