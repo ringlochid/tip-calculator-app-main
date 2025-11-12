@@ -4,17 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/icon-dollar.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
   
-  <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Tip calculator app</title>
 </head>
 <body>
+  <main class="main-card">
+    <div class="operation-card">
+      <form id="operation-form" class="operation-card-form">
+        <label class="operation-card-field">
+          <span class="sr-only">Bill</span> <br>
+          <img alt="doller" src="./images/icon-dollar.svg">
+          <input type="number" id="bill" name="bill" inputmode="decimal" min="0" step="0.01" placeholder="0" required>
+        </label>
+        <fieldset>
+          <legend>Select Tip %</legend>
+          <input type="radio" id="operation-card-tip-5" name="tip" value="5">
+          <label for="operation-card-tip-5">5%</label>
+          <input type="radio" id="operation-card-tip-10" name="tip" value="10">
+          <label for="operation-card-tip-10">10%</label>
+          <input type="radio" id="operation-card-tip-15" name="tip" value="15">
+          <label for="operation-card-tip-15">15%</label>
+          <input type="radio" id="operation-card-tip-25" name="tip" value="25">
+          <label for="operation-card-tip-25">25%</label>
+          <input type="radio" id="operation-card-tip-50" name="tip" value="50">
+          <label for="operation-card-tip-50">50%</label>
+
+          <label for="operation-card-custom-tip" class="sr-only">Custom tip</label>
+          <input type="number" id="operation-card-custom-tip" name="custom-tip" inputmode="numeric" min="0" step="1" placeholder="Custom">
+        </fieldset>
+      </form>
+    </div>
+    <div class="result-card">
+      <div class="res-display">res-display</div>
+      <div class="reset-button">reset</div>
+    </div>
+  </main>
 
   Bill
 
@@ -36,9 +63,5 @@
 
   Reset
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
