@@ -93,7 +93,16 @@ const dependenciesReady = {
 
 const canUpdate = (key) => valueCheckers[key]() && dependenciesReady[key]();
 
+const toggleResetState = () => {
+  const hasAnyValue =
+    valueCheckers.bill() || valueCheckers.tip() || valueCheckers.people();
+  if (resetButton) {
+    resetButton.disabled = !hasAnyValue;
+  }
+};
+
 const handleFieldChange = (key) => {
+  toggleResetState();
   if (canUpdate(key)) {
     update_res();
   } else {
@@ -170,6 +179,7 @@ resetButton?.addEventListener('click', () => {
   formTip.reset();
   show_msg('', '', '');
   reset_to_zero();
+  toggleResetState();
 });
 
-update_res();
+toggleResetState();
