@@ -41,6 +41,7 @@ const message_for_np = (peopleVal) => {
   if (peopleVal === '') return '';
   const numeric = Number(peopleVal);
   if (!Number.isFinite(numeric)) return 'Invalid value';
+  if (numeric != Math.trunc(numeric)) return 'Should be integer';
   if (numeric === 0) return "Can't be zero";
   if (numeric < 0) return "Can't be negative";
   if (numeric > MAX_VAL) return `Max ${MAX_VAL}`;
